@@ -29,7 +29,8 @@ to Ruby/JRuby.
     "lib/unf_jruby.rb",
     "test/helper.rb",
     "test/normalization-test.txt",
-    "test/test_unf.rb"
+    "test/test_unf.rb",
+    "unf.gemspec"
   ]
   s.homepage = %q{http://github.com/knu/unf}
   s.licenses = [%q{MIT}]
