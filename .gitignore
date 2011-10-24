@@ -46,3 +46,6 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# This is a multi-platform gem.
+Gemfile.lock

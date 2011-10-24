@@ -17,8 +17,11 @@ Jeweler::Tasks.new do |gem|
   gem.name = "unf"
   gem.homepage = "http://github.com/knu/unf"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby}
+  gem.description = <<-'EOS'
+This is a wrapper library to bring Unicode Normalization Form support
+to Ruby/JRuby.
+  EOS
   gem.email = "knu@idaemons.org"
   gem.authors = ["Akinori MUSHA"]
   # dependencies defined in Gemfile
