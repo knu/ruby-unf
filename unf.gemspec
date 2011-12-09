@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{unf}
-  s.version = "0.0.3"
+  s.version = "0.0.4"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = [%q{Akinori MUSHA}]
-  s.date = %q{2011-10-24}
+  s.date = %q{2011-12-09}
   s.description = %q{This is a wrapper library to bring Unicode Normalization Form support
 to Ruby/JRuby.
 }
@@ -26,7 +26,9 @@ to Ruby/JRuby.
     "Rakefile",
     "VERSION",
     "lib/unf.rb",
-    "lib/unf_jruby.rb",
+    "lib/unf/normalizer.rb",
+    "lib/unf/normalizer_cruby.rb",
+    "lib/unf/normalizer_jruby.rb",
     "test/helper.rb",
     "test/normalization-test.txt",
     "test/test_unf.rb",
