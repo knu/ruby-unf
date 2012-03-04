@@ -2,7 +2,7 @@
 require 'helper'
 require 'pathname'
 
-class TestUnf < Test::Unit::TestCase
+class TestUNF < Test::Unit::TestCase
   should "raise ArgumentError if an unknown normalization form is given" do
     normalizer = UNF::Normalizer.new
     assert_raises(ArgumentError) { normalizer.normalize("が", :nfck) }

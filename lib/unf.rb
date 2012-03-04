@@ -1,3 +1,5 @@
+require 'unf/version'
+
 module UNF
   autoload :Normalizer, 'unf/normalizer'
 end
