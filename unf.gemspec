@@ -14,7 +14,7 @@ to Ruby/JRuby.
 
   gem.files         = `git ls-files`.split("\n")
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
-  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
+  gem.test_files    = gem.files.grep(%r{^(test|spec|features)/.*\.rb})
   gem.name          = "unf"
   gem.require_paths = ["lib"]
   gem.version       = UNF::VERSION
