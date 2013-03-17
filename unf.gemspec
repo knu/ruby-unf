@@ -22,7 +22,7 @@ to Ruby/JRuby.
   gem.add_dependency 'unf_ext', '>= 0' unless defined?(JRUBY_VERSION)
 
   gem.add_development_dependency 'shoulda', '>= 0'
-  gem.add_development_dependency 'bundler', '~> 1.0.0'
+  gem.add_development_dependency 'bundler', '>= 1.2.0'
   gem.add_development_dependency 'rake', '>= 0.9.2.2'
   gem.add_development_dependency 'rdoc', '> 2.4.2'
 end
