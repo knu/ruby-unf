@@ -1,6 +1,6 @@
 require 'java'
 
-module UNF
+module UNF # :nodoc: all
   class Normalizer
     def initialize()
       @normalizer = java.text.Normalizer

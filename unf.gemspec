@@ -2,6 +2,8 @@
 require File.expand_path('../lib/unf/version', __FILE__)
 
 Gem::Specification.new do |gem|
+  gem.name          = "unf"
+  gem.version       = UNF::VERSION
   gem.authors       = ["Akinori MUSHA"]
   gem.email         = ["knu@idaemons.org"]
   gem.description   = <<-'EOS'
@@ -15,9 +17,8 @@ to Ruby/JRuby.
   gem.files         = `git ls-files`.split("\n")
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/.*\.rb})
-  gem.name          = "unf"
   gem.require_paths = ["lib"]
-  gem.version       = UNF::VERSION
+  gem.extra_rdoc_files = ['README.md', 'LICENSE']
 
   gem.add_dependency 'unf_ext', '>= 0' unless defined?(JRUBY_VERSION)
 
