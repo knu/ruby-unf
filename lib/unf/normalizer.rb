@@ -1,3 +1,4 @@
+require 'singleton'
 if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'jruby'
   require 'unf/normalizer_jruby'
 else
@@ -7,6 +8,8 @@ end
 # UTF-8 string normalizer class.  Implementations may vary depending
 # on the platform.
 class UNF::Normalizer
+  include Singleton
+
   class << self
     # :singleton-method: new
     # :call-seq:
@@ -14,12 +17,7 @@ class UNF::Normalizer
     #   instance
     #
     # Returns a normalizer instance.
-
-    # :stopdoc:
-    def instance
-      @@normalizer ||= new
-    end
-    # :startdoc:
+    public :new
 
     # A shortcut for new.normalize(string, form).
     def normalize(string, form)
