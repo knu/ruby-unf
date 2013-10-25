@@ -11,15 +11,16 @@ class UNF::Normalizer
   include Singleton
 
   class << self
-    # :singleton-method: new
-    # :call-seq:
-    #   new
-    #   instance
+    # :singleton-method: instance
     #
-    # Returns a normalizer instance.
+    # Returns a singleton normalizer instance.
+
+    # :singleton-method: new
+    #
+    # Returns a new normalizer instance.  Use +singleton+ instead.
     public :new
 
-    # A shortcut for new.normalize(string, form).
+    # A shortcut for instance.normalize(string, form).
     def normalize(string, form)
       instance.normalize(string, form)
     end

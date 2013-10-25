@@ -14,7 +14,7 @@ Description
 * Normalizes UTF-8 strings into and from NFC, NFD, NFKC or NFKD
 
         # For bulk conversion
-        normalizer = UNF::Normalizer.new
+        normalizer = UNF::Normalizer.instance
         a_bunch_of_strings.map! { |string|
           normalizer.normalize(string, :nfc) #=> string in NFC
         }
