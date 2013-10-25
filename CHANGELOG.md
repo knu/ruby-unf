@@ -3,7 +3,7 @@
 Features:
 
   - Make UNF::Normalizer.instance thread-safe, and deprecate .new.
-    (GH #5)
+    (GH #6)
 
 ## 0.1.2 (2013-08-12)
 
