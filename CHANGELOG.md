@@ -1,3 +1,10 @@
+## 0.1.3 (2013-10-25)
+
+Features:
+
+  - Make UNF::Normalizer.instance thread-safe, and deprecate .new.
+    (GH #5)
+
 ## 0.1.2 (2013-08-12)
 
 Features:
