@@ -20,7 +20,7 @@ Description
         }
 
         # Class method
-        UNF::Normalizer.normalize(string)
+        UNF::Normalizer.normalize(string, :nfc)
 
         # Instance methods of String
         string.to_nfc
