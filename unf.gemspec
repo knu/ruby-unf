@@ -12,7 +12,7 @@ to Ruby/JRuby.
   EOS
   gem.summary       = %q{A wrapper library to bring Unicode Normalization Form support to Ruby/JRuby}
   gem.homepage      = "https://github.com/knu/ruby-unf"
-  gem.platform      = defined?(JRUBY_VERSION) ? 'jruby' : Gem::Platform::RUBY
+  gem.platform      = defined?(JRUBY_VERSION) ? 'java' : Gem::Platform::RUBY
   gem.license       = "2-clause BSDL"
 
   gem.files         = `git ls-files`.split("\n")
