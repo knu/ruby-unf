@@ -10,12 +10,16 @@ Rake::TestTask.new(:test) do |test|
   test.verbose = true
 end
 
-require 'rdoc/task'
-Rake::RDocTask.new do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title = "#{gemspec.name} #{gemspec.version}"
-  rdoc.rdoc_files.include(gemspec.extra_rdoc_files)
-  rdoc.rdoc_files.include('lib/**/*.rb')
+begin
+  require 'rdoc/task'
+  Rake::RDocTask.new do |rdoc|
+    rdoc.rdoc_dir = 'rdoc'
+    rdoc.title = "#{gemspec.name} #{gemspec.version}"
+    rdoc.rdoc_files.include(gemspec.extra_rdoc_files)
+    rdoc.rdoc_files.include('lib/**/*.rb')
+  end
+rescue LoadError
+  puts 'This platform does not support RDocTask.'
 end
 
 task :default => :test
