@@ -35,4 +35,4 @@ class String
       end
     }
   }
-end
+end unless String.method_defined?(:to_nfc)

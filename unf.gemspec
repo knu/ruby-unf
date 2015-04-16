@@ -21,7 +21,8 @@ to Ruby/JRuby.
   gem.require_paths = ["lib"]
   gem.extra_rdoc_files = ['README.md', 'LICENSE']
 
-  gem.add_dependency 'unf_ext', '>= 0' unless defined?(JRUBY_VERSION)
+  gem.required_ruby_version = '>= 1.9.3'
+  gem.extensions = 'ext/mkrf_conf.rb'
 
   gem.add_development_dependency 'bundler', '>= 1.2.0'
   gem.add_development_dependency 'rake', '>= 0.9.2.2'
