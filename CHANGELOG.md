@@ -1,3 +1,9 @@
+## 0.1.4 (2014-04-04)
+
+Bugfixes:
+
+  - Fix the gem platform name for JRuby.
+
 ## 0.1.3 (2013-10-25)
 
 Features:
