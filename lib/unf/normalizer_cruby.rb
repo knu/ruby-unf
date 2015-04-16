@@ -1,8 +1,7 @@
-begin
-  require 'unf_ext'
-rescue LoadError
-  String.method_defined?(:unicode_normalize) or raise
-
+case
+when defined?(UNF::Normalizer)
+  # Probably unf_ext is preloaded.
+when String.method_defined?(:unicode_normalize)
   class String
     [:nfc, :nfd, :nfkc, :nfkd].each { |form|
       eval %{
@@ -20,4 +19,6 @@ rescue LoadError
       end
     end
   end
+else
+  require 'unf_ext'
 end
