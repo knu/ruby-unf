@@ -3,12 +3,12 @@ require 'helper'
 require 'pathname'
 
 class TestUNF < Test::Unit::TestCase
-  should "raise ArgumentError if an unknown normalization form is given" do
+  test "raise ArgumentError if an unknown normalization form is given" do
     normalizer = UNF::Normalizer.instance
     assert_raises(ArgumentError) { normalizer.normalize("が", :nfck) }
   end
 
-  should "pass all tests bundled with the original unf" do
+  test "pass all tests bundled with the original unf" do
     normalizer = UNF::Normalizer.instance
     open(Pathname(__FILE__).dirname + 'normalization-test.txt', 'r:utf-8').each_slice(6) { |lines|
       flunk "broken test file" if lines.size != 6 || lines.pop !~ /^$/
