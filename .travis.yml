@@ -3,12 +3,12 @@ rvm:
   - 2.0
   - 2.1
   - 2.2
-  - 2.3.4
-  - 2.4.1
+  - 2.3.5
+  - 2.4.2
   - ruby-head
   - jruby-19mode
   - jruby
-  - jruby-9.0.0.0.pre1
+  - jruby-9
   - jruby-head
   - rbx-2
 matrix:
