@@ -1,3 +1,11 @@
+## 0.2.0 (2024-08-18)
+
+Features:
+
+  - Use String#unicode_normalize on Ruby >=2.2 unless unf_ext is already loaded.
+
+  - Reduce the gem size by removing unnecessary files. (GH #22)
+
 ## 0.1.4 (2014-04-04)
 
 Bugfixes:
