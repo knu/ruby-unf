@@ -5,7 +5,9 @@ when String.method_defined?(:unicode_normalize)
   class String
     [:nfc, :nfd, :nfkc, :nfkd].each { |form|
       eval %{
-        def to_#{form.to_s}
+        remove_method :to_#{form} if method_defined?(:to_#{form})
+
+        def to_#{form}
           unicode_normalize(#{form.inspect})
         end
       }
