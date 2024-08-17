@@ -6,7 +6,7 @@ gemspec = Bundler::GemHelper.gemspec
 require 'rake/testtask'
 Rake::TestTask.new(:test) do |test|
   test.libs << 'test'
-  test.test_files = gemspec.test_files
+  test.test_files = FileList['test/**/test_*.rb']
   test.verbose = true
 end
 
