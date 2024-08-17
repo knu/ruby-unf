@@ -1,0 +1,42 @@
+name: test
+
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  ruby-versions:
+    uses: ruby/actions/.github/workflows/ruby_versions.yml@master
+    with:
+      engine: cruby
+      min_version: 3.2
+
+  build:
+    needs: ruby-versions
+    name: build (${{ matrix.ruby_engine }} / ${{ matrix.ruby_version || 'latest' }} / ${{ matrix.os }})
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+        ruby_engine:
+          - ruby
+        ruby_version:
+          - '2.0'
+          - '2.7'
+          - '${{ fromJson(needs.ruby-versions.outputs.versions) }}'
+        include:
+          - { os: ubuntu-latest,  ruby_engine: jruby, ruby_version: '' }
+          - { os: ubuntu-latest,  ruby_engine: jruby, ruby_version: head }
+          - { os: macos-latest,   ruby_engine: ruby,  ruby_version: '' }
+          - { os: windows-latest, ruby_engine: ruby,  ruby_version: ucrt }
+          - { os: windows-latest, ruby_engine: ruby,  ruby_version: mswin }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ matrix.ruby_engine }}-${{ matrix.ruby_version }}
+          bundler-cache: true
+
+      - name: Run test
+        run: rake test
