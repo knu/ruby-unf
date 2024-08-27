@@ -28,4 +28,6 @@ to Ruby/JRuby.
   gem.add_development_dependency 'rdoc', '> 2.4.2'
   gem.add_development_dependency 'test-unit'
   gem.add_development_dependency 'unf_ext', '>= 0' unless defined?(JRUBY_VERSION)
+
+  gem.metadata["changelog_uri"] = gem.homepage + "/blob/master/CHANGELOG.md"
 end
