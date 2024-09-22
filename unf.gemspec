@@ -15,7 +15,7 @@ to Ruby/JRuby.
   gem.platform      = defined?(JRUBY_VERSION) ? 'java' : Gem::Platform::RUBY
   gem.license       = "BSD-2-Clause"
 
-  gem.files         = `git ls-files -z`.split("\x0").reject { |f| f.start_with?(*%w[test/ Rakefile .gitignore .travis.yml]) }
+  gem.files         = `git ls-files -z`.split("\x0").reject { |f| f.start_with?(*%w[test/ Rakefile .gitignore .github/]) }
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
   gem.require_paths = ["lib"]
   gem.extra_rdoc_files = ['README.md', 'LICENSE']
